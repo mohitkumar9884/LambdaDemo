@@ -16,8 +16,9 @@
                 new Person() { SSN = 6, Name = "Karthik", Address = "Maharashtra", Age = 70 },
             };
             DisplayPersonData(listOfPerson);
-            PersonDataManagement.SkipAgeLessThan60Records(listOfPerson);
-             
+            PersonDataManagement.RemovePersonData(listOfPerson,"Harish");
+            PersonDataManagement.RemovePersonData(listOfPerson, "ABC");
+
         }
 
         public static void DisplayPersonData(List<Person> list)

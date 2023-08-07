@@ -38,16 +38,18 @@ namespace LambdaDemo
             Console.WriteLine("\nAverage age is :" + average);
         }
 
-        public static void SearchForPersonBasedOnName(List<Person> list,string input)
+        public static List<Person> SearchForPersonBasedOnName(List<Person> list,string input)
         {
             List<Person>teenageRecords = list.Where(p => (p.Name == input)).ToList();
             if(teenageRecords.Count != 0)
             {
                 Console.WriteLine("{0} is present in our records", input);
+                return teenageRecords;
             }
             else
             {
                 Console.WriteLine("{0} is not present in our records", input);
+                return teenageRecords;
             }
         }
 
@@ -61,6 +63,20 @@ namespace LambdaDemo
             Console.WriteLine("\nSkip Age Less Than 60 Records");
             Program.DisplayPersonData(above60AgeRecords);
 
+        }
+
+        public static void RemovePersonData(List<Person> list, string personName)
+        {
+            List<Person> data = SearchForPersonBasedOnName(list, personName);
+           foreach(Person person in data) 
+            {
+               list.Remove(person);
+            }
+            if(data.Count !=0)
+            {
+                Console.WriteLine("\nAfter success of remove Operation");
+                Program.DisplayPersonData(list);
+            }
         }
     }
 }
