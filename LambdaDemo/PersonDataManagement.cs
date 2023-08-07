@@ -37,5 +37,18 @@ namespace LambdaDemo
             double average = list.Average(p=> p.Age);
             Console.WriteLine("\nAverage age is :" + average);
         }
+
+        public static void SearchForPersonBasedOnName(List<Person> list,string input)
+        {
+            List<Person>teenageRecords = list.Where(p => (p.Name == input)).ToList();
+            if(teenageRecords.Count != 0)
+            {
+                Console.WriteLine("{0} is present in our records", input);
+            }
+            else
+            {
+                Console.WriteLine("{0} is not present in our records", input);
+            }
+        }
     }
 }
