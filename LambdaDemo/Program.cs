@@ -16,8 +16,8 @@
                 new Person() { SSN = 6, Name = "Karthik", Address = "Maharashtra", Age = 70 },
             };
             DisplayPersonData(listOfPerson);
-            PersonDataManagement.SearchForPersonBasedOnName(listOfPerson,"Arya");
-            PersonDataManagement.SearchForPersonBasedOnName(listOfPerson, "XYZ");
+            PersonDataManagement.SkipAgeLessThan60Records(listOfPerson);
+             
         }
 
         public static void DisplayPersonData(List<Person> list)

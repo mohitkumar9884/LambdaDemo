@@ -50,5 +50,17 @@ namespace LambdaDemo
                 Console.WriteLine("{0} is not present in our records", input);
             }
         }
+
+        public static void SkipAgeLessThan60Records(List<Person> list)
+        {
+            //List<Person> above60AgeRecords = list.Where(p => (p.Age >60)).ToList();
+            // Console.WriteLine("\nSkip Age Less Than 60 Records");
+            //Program.DisplayPersonData(above60AgeRecords);
+            List<Person> result = list.OrderBy(p => p.Age).ToList();
+            List<Person> above60AgeRecords = result.SkipWhile(p  => p.Age<60).ToList();
+            Console.WriteLine("\nSkip Age Less Than 60 Records");
+            Program.DisplayPersonData(above60AgeRecords);
+
+        }
     }
 }
