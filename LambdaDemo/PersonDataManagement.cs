@@ -22,7 +22,13 @@ namespace LambdaDemo
             List<Person> top2Records = list.OrderBy(p=> p.Age).Where(p=>p.Age<60).Take(2).ToList();
             Console.WriteLine("\nRetreive Top2 Records Based On Age");
             Program.DisplayPersonData(top2Records);
+        }
 
+        public static void FindTeenageAgeRecords(List<Person> list)
+        {
+            List<Person>teenageRecords=list.Where(p=> (p.Age <= 18 &&  p.Age >=13)).ToList();
+            Console.WriteLine("\nFind Teenage Age Records between 13 to 18");
+            Program.DisplayPersonData(teenageRecords);
 
         }
     }
