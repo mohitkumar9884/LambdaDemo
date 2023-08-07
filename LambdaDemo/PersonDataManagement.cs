@@ -31,5 +31,11 @@ namespace LambdaDemo
             Program.DisplayPersonData(teenageRecords);
 
         }
+
+        public static void FindAverageAge(List<Person> list)
+        {
+            double average = list.Average(p=> p.Age);
+            Console.WriteLine("\nAverage age is :" + average);
+        }
     }
 }

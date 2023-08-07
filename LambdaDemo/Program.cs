@@ -16,7 +16,7 @@
                 new Person() { SSN = 6, Name = "Karthik", Address = "Maharashtra", Age = 70 },
             };
             DisplayPersonData(listOfPerson);
-            PersonDataManagement.FindTeenageAgeRecords(listOfPerson);
+            PersonDataManagement.FindAverageAge(listOfPerson);
         }
 
         public static void DisplayPersonData(List<Person> list)
