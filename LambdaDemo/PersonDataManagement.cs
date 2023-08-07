@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LambdaDemo
+{
+    internal class PersonDataManagement
+    {
+        public static void RetreiveTop2RecordsBasedOnAge(List<Person> list)
+        {
+            //List<Person> sortedData = list.OrderBy(p => p.Age).ToList();
+            //Console.WriteLine("\nSorted in ascending order based on Age");
+           // Program.DisplayPersonData(sortedData);
+           // List<Person> lessThan60=sortedData.Where(p => p.Age<60).ToList();
+            //Console.WriteLine("\nLess than 60 Age records");
+           // Program.DisplayPersonData(lessThan60);
+           // List<Person> top2 = lessThan60.Take(2).ToList();
+           // Console.WriteLine("\nTop2 records whos age less than 60");
+           // Program.DisplayPersonData(top2);
+            List<Person> top2Records = list.OrderBy(p=> p.Age).Where(p=>p.Age<60).Take(2).ToList();
+            Console.WriteLine("\nRetreive Top2 Records Based On Age");
+            Program.DisplayPersonData(top2Records);
+
+
+        }
+    }
+}
